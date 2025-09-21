@@ -5,8 +5,8 @@
    Tutorial 2
    Coding Challenge 4
 
-   Author: 
-   Date:   
+   Author: Tim Adkison
+   Date:   2025-09-21
    
    Filename: code2-4.css
 
@@ -14,7 +14,7 @@
 
 div {
    background-color: rgb(255 171 171);
-   padding-size: 10px;
+   padding: 10px;
    font-size: 1.2em;
 }
 
@@ -33,14 +33,14 @@ aside h1 {
 aside h2 {
    margin-top: 5px;
    font-family: Segoe, Verdana, sans-serif;
-   font-size: 1.2e;
+   font-size: 1.2em;
 }
 
 aside p {
    font-size: 1.1em;
-   text-ident: 1em;
+   text-indent: 1em;
 }
 
-aside p:first of type {
+aside p:first-of-type {
    text-indent: 0em;
 }

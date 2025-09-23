@@ -243,13 +243,14 @@ td, th {
 	vertical-align: top;
 }
 
-
 /* Footer styles for disclaimer */
 .disclaimer-footer {
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	width: 100%;
+	right: 0;
+	width: 100vw;
+	margin-left: calc(-50vw + 50%);
 	background-color: #333;
 	color: #fff;
 	text-align: center;

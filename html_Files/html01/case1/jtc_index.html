@@ -69,8 +69,8 @@ phone:	<a href="tel:5175554811">  517.555.4811</a>
     </footer>
 
     <script>
-        // Wait for DOM to be fully loaded
-        document.addEventListener('DOMContentLoaded', function() {
+    // Check if page is loaded in an iframe and hide footer accordingly
+        (function () {
             function isInIframe() {
                 try {
                     return window.self !== window.top;
@@ -79,34 +79,15 @@ phone:	<a href="tel:5175554811">  517.555.4811</a>
                 }
             }
 
-            console.log('Checking iframe status...', isInIframe()); // Debug log
-
             if (isInIframe()) {
-                console.log('Page is in iframe, adding open link...'); // Debug log
-                
-                // Page is in iframe - add class and create "Open in New Tab" link
+                // Page is in iframe - add class to hide footer
                 document.body.classList.add('in-iframe');
-                
-                // Create the "Open in New Tab" link
-                const openLink = document.createElement('a');
-                openLink.href = '#';
-                openLink.innerHTML = '↗ Open in New Tab';
-                openLink.className = 'open-new-tab';
-                openLink.title = 'Open this page in a new tab';
-                
-                openLink.onclick = function (e) {
-                    e.preventDefault();
-                    console.log('Opening in new tab...'); // Debug log
-                    window.open(window.location.href, '_blank');
-                    return false;
-                };
-
-                document.body.appendChild(openLink);
-                console.log('Open link added to page'); // Debug log
-            } else {
-                console.log('Page is NOT in iframe'); // Debug log
             }
-        });
+        })();
+
+
+
+
     </script>
 
 </body>

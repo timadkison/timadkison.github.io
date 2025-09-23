@@ -39,6 +39,7 @@
         main {
             padding: 1rem;
             height: calc(100vh - 200px); /* Adjusted for new footer height */
+            position: relative;
         }
         .project {
             background: #fff;
@@ -60,10 +61,67 @@
         footer p {
             margin: 0.2rem 0; /* Reduced margins between paragraphs */
         }
+        
+        /* Iframe wrapper and controls */
+        .iframe-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .iframe-controls {
+            background: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .iframe-title {
+            color: #666;
+            font-weight: normal;
+        }
+        
+        .iframe-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .open-new-tab-btn {
+            background: rgba(51, 51, 51, 0.9);
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            transition: background 0.3s;
+        }
+        
+        .open-new-tab-btn:hover {
+            background: rgba(51, 51, 51, 1);
+            color: white;
+        }
+        
+        .iframe-container {
+            height: calc(100% - 35px); /* Subtract controls height */
+        }
+        
         iframe {
             width: 100%;
             height: 100%;
             border: none;
+            border-radius: 0 0 5px 5px;
         }
     </style>
 </head>
@@ -76,24 +134,73 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="\html_Files\html01\case1\jtc_index.html" target="projectFrame">Module 1 - T1 Case Problem 1: Jedds Tree Care</a></li>
-            <li><a href="\html_Files\html03\review\pc_specials.html" target="projectFrame">Module 2 - T3 Review Assignment</a></li>
-            <li><a href="placeholder.html" target="projectFrame">Save your Fork Project</a></li>
-            <li><a href="placeholder.html" target="projectFrame">T5 Review Assignment (Module 3)</a></li>
-            <li><a href="placeholder.html" target="projectFrame">T5 Case Problem 1: Golden Pulps (Module 3)</a></li>
+            <li><a href="\html_Files\html01\case1\jtc_index.html" target="projectFrame" data-title="Module 1 - T1 Case Problem 1: Jedds Tree Care">Module 1 - T1 Case Problem 1: Jedds Tree Care</a></li>
+            <li><a href="\html_Files\html03\review\pc_specials.html" target="projectFrame" data-title="Module 2 - T3 Review Assignment">Module 2 - T3 Review Assignment</a></li>
+            <li><a href="placeholder.html" target="projectFrame" data-title="Save your Fork Project">Save your Fork Project</a></li>
+            <li><a href="placeholder.html" target="projectFrame" data-title="T5 Review Assignment (Module 3)">T5 Review Assignment (Module 3)</a></li>
+            <li><a href="placeholder.html" target="projectFrame" data-title="T5 Case Problem 1: Golden Pulps (Module 3)">T5 Case Problem 1: Golden Pulps (Module 3)</a></li>
             <!--<li><a href="placeholder.html" target="projectFrame">Case Project 7</a></li>
             <li><a href="placeholder.html" target="projectFrame">E-Commerce Project</a></li>-->
         </ul>
     </nav>
 
     <main>
-        <iframe name="projectFrame" src="welcome.html"></iframe>
+        <div class="iframe-wrapper">
+            <div class="iframe-controls">
+                <span class="iframe-title" id="currentTitle">Welcome to my Project Showcase</span>
+                <div class="iframe-actions">
+                    <button class="open-new-tab-btn" id="openNewTabBtn" onclick="openCurrentPageInNewTab()" title="Open current page in new tab">
+                        ↗ Open in New Tab
+                    </button>
+                </div>
+            </div>
+            <div class="iframe-container">
+                <iframe name="projectFrame" id="projectFrame" src="welcome.html"></iframe>
+            </div>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2025 - My Showcase - Tim Adkison COP2822C</p>
         <p>This website is for a Web Technologies class, and no products or services are available for purchase</p>
     </footer>
+
+    <script>
+        let currentFrameUrl = 'welcome.html';
+        
+        // Function to open current iframe content in new tab
+        function openCurrentPageInNewTab() {
+            if (currentFrameUrl && currentFrameUrl !== 'welcome.html') {
+                window.open(currentFrameUrl, '_blank');
+            }
+        }
+        
+        // Track iframe URL changes and update title
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.getElementById('projectFrame');
+            const titleElement = document.getElementById('currentTitle');
+            const openBtn = document.getElementById('openNewTabBtn');
+            
+            // Update current URL when navigation links are clicked
+            document.querySelectorAll('nav a[target="projectFrame"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    currentFrameUrl = this.href;
+                    const title = this.getAttribute('data-title') || this.textContent;
+                    titleElement.textContent = title;
+                    
+                    // Show/hide open button based on content
+                    if (currentFrameUrl.includes('welcome.html') || currentFrameUrl.includes('placeholder.html')) {
+                        openBtn.style.display = 'none';
+                    } else {
+                        openBtn.style.display = 'inline-flex';
+                    }
+                });
+            });
+            
+            // Initially hide button for welcome page
+            openBtn.style.display = 'none';
+        });
+    </script>
 
 </body>
 </html>

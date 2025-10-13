@@ -4,8 +4,8 @@
    Tutorial 5
    Case Problem 1
    
-   Author:   
-   Date:     
+   Author:   Tim Adkison   
+   Date:     10/13/25
    
    Filename: gp_print.css
 
@@ -14,26 +14,29 @@
 
 */
 
-
-
-
 /* Hidden Objects */
 
-
-
-
-
-
+nav, footer, article {
+	display: none;
+}
 /* Comic Book Sheet Styles */
+section#sheet {
+	width: 6in;
+	margin: 0 auto;
+}
 
+img.size1 {
+	width: 5in;
+}
 
+img.size2 {
+	width: 3in;
+}
 
+img.size3 {
+	width: 2in;
+}
 
-
-
-	
-
-
-
-
-
+img.size4 {
+	width: 1.5in;
+}

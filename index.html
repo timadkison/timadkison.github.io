@@ -5,61 +5,144 @@
     <title>Project Showcase</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            padding-bottom: 80px; /* Increased for smaller footer */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding-bottom: 80px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
         header {
-            background-color: #333;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: #fff;
-            padding: 1rem 0;
+            padding: 2rem 0;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="0.8" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .content-wrapper {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            background: #f8f9fa;
         }
         nav {
-            background: #444;
+            background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
             color: #fff;
-            padding: 0.5rem;
-            text-align: center;
+            width: 280px;
+            min-width: 280px;
+            padding: 0;
+            overflow-y: auto;
+            flex-shrink: 0;
+            box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.1) 100%);
         }
         nav ul {
             list-style: none;
-            padding: 0;
+            padding: 1.5rem 0;
             margin: 0;
         }
         nav ul li {
-            display: inline;
-            margin-right: 20px;
+            display: block;
+            margin-bottom: 2px;
         }
         nav a {
-            color: #fff;
+            color: #ecf0f1;
             text-decoration: none;
+            padding: 12px 20px;
+            display: block;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            line-height: 1.4;
+            border-left: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+        nav a:hover {
+            background: rgba(52, 152, 219, 0.2);
+            border-left-color: #3498db;
+            color: #fff;
+            padding-left: 25px;
+            transform: translateX(5px);
+        }
+        nav a:hover::before {
+            left: 100%;
+        }
+        nav a:first-child {
+            background: rgba(46, 204, 113, 0.2);
+            border-left-color: #2ecc71;
+            font-weight: 600;
+        }
+        nav a:first-child:hover {
+            background: rgba(46, 204, 113, 0.3);
         }
         main {
-            padding: 1rem;
-            height: calc(100vh - 200px); /* Adjusted for new footer height */
-            position: relative;
+            flex: 1;
+            padding: 1.5rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #f8f9fa;
         }
         .project {
             background: #fff;
             margin-bottom: 1rem;
             padding: 1rem;
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         footer {
             text-align: center;
-            padding: 0.5rem 0; /* Reduced padding */
-            background-color: #333;
-            color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            font-size: 0.8em; /* Smaller font but still accessible (12.8px on most browsers) */
-            line-height: 1.3; /* Better line spacing for readability */
+            padding: 1rem 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #ecf0f1;
+            font-size: 0.85em;
+            line-height: 1.4;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
         }
         footer p {
-            margin: 0.2rem 0; /* Reduced margins between paragraphs */
+            margin: 0.3rem 0;
         }
         
         /* Iframe wrapper and controls */
@@ -68,24 +151,31 @@
             width: 100%;
             height: 100%;
             background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
         }
         
         .iframe-controls {
-            background: #f8f9fa;
-            border-bottom: 1px solid #ddd;
-            padding: 5px 10px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-bottom: 1px solid #dee2e6;
+            padding: 8px 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 12px;
-            border-radius: 5px 5px 0 0;
+            font-size: 13px;
+            border-radius: 12px 12px 0 0;
+            flex-shrink: 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         
         .iframe-title {
-            color: #666;
-            font-weight: normal;
+            color: #495057;
+            font-weight: 500;
+            font-size: 14px;
         }
         
         .iframe-actions {
@@ -94,76 +184,158 @@
         }
         
         .open-new-tab-btn {
-            background: rgba(51, 51, 51, 0.9);
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
             color: white;
             border: none;
-            padding: 4px 8px;
-            border-radius: 3px;
-            font-size: 11px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
             cursor: pointer;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 3px;
-            transition: background 0.3s;
+            gap: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
+            font-weight: 500;
         }
         
         .open-new-tab-btn:hover {
-            background: rgba(51, 51, 51, 1);
-            color: white;
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+        }
+        
+        .open-new-tab-btn:active {
+            transform: translateY(0);
         }
         
         .iframe-container {
-            height: calc(100% - 35px); /* Subtract controls height */
+            flex: 1;
+            overflow: hidden;
         }
         
         iframe {
             width: 100%;
             height: 100%;
             border: none;
-            border-radius: 0 0 5px 5px;
+            border-radius: 0 0 12px 12px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            body {
+                background: #f8f9fa;
+            }
+            header h1 {
+                font-size: 1.8rem;
+                letter-spacing: 1px;
+            }
+            .content-wrapper {
+                flex-direction: column;
+            }
+            nav {
+                width: 100%;
+                min-width: auto;
+                max-height: 250px;
+                overflow-y: auto;
+            }
+            nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 1rem;
+            }
+            nav ul li {
+                flex: 1;
+                min-width: 200px;
+                margin-bottom: 0;
+            }
+            nav a {
+                text-align: center;
+                font-size: 12px;
+                padding: 8px 12px;
+                border-radius: 6px;
+                border-left: none;
+                border-bottom: 3px solid transparent;
+            }
+            nav a:hover {
+                padding-left: 12px;
+                transform: none;
+                border-bottom-color: #3498db;
+            }
+            main {
+                padding: 1rem;
+            }
+            .iframe-wrapper {
+                border-radius: 8px;
+            }
+            .iframe-controls {
+                border-radius: 8px 8px 0 0;
+            }
+            iframe {
+                border-radius: 0 0 8px 8px;
+            }
+        }
+
+        /* Custom scrollbar for navigation */
+        nav::-webkit-scrollbar {
+            width: 6px;
+        }
+        nav::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.1);
+        }
+        nav::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 3px;
+        }
+        nav::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.5);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Project Showcase Page</h1>
+        <h1>Project Showcase</h1>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="\html_Files\html01\case1\jtc_index.html" target="projectFrame" data-title="Module 1 - T1 Case Problem 1: Jedds Tree Care">Module 1 - T1 Case Problem 1: Jedds Tree Care</a></li>
-            <li><a href="\html_Files\html03\review\pc_specials.html" target="projectFrame" data-title="Module 2 - T3 Review Assignment">Module 2 - T3 Review Assignment</a></li>
-            <li><a href="\html_Files\html04\case1\sf_torte.html" target="projectFrame" data-title="Save your Fork Project">Save your Fork Project</a></li>
-            <li><a href="\html_Files\html05\review\tf_tips.html" target="projectFrame" data-title="T5 Review Assignment (Module 3)">T5 Review Assignment (Module 3)</a></li>
-            <li><a href="\html_Files\html05\case1\gp_cover.html" target="projectFrame" data-title="T5 Case Problem 1: Golden Pulps (Module 3)">T5 Case Problem 1: Golden Pulps (Module 3)</a></li>
-            <li><a href="\html_Files\html8\Review\cp_astaire.html" target="projectFrame" data-title="Module 4 - T8 Review Assignment">Module 4 - T8 Review Assignment</a></li>
-            <!--<li><a href="placeholder.html" target="projectFrame">Case Project 7</a></li>
-    <li><a href="placeholder.html" target="projectFrame">E-Commerce Project</a></li>-->
-</ul>
-    </nav>
+    <div class="content-wrapper">
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="\html_Files\html01\case1\jtc_index.html" target="projectFrame" data-title="Module 1 - T1 Case Problem 1: Jedds Tree Care">Module 1 - T1 Case Problem 1: Jedds Tree Care</a></li>
+                <li><a href="\html_Files\html03\review\pc_specials.html" target="projectFrame" data-title="Module 2 - T3 Review Assignment">Module 2 - T3 Review Assignment</a></li>
+                <li><a href="\html_Files\html04\case1\sf_torte.html" target="projectFrame" data-title="Save your Fork Project">Save your Fork Project</a></li>
+                <li><a href="\html_Files\html05\review\tf_tips.html" target="projectFrame" data-title="T5 Review Assignment (Module 3)">T5 Review Assignment (Module 3)</a></li>
+                <li><a href="\html_Files\html05\case1\gp_cover.html" target="projectFrame" data-title="T5 Case Problem 1: Golden Pulps (Module 3)">T5 Case Problem 1: Golden Pulps (Module 3)</a></li>
+                <li><a href="\html_Files\html8\Review\cp_astaire.html" target="projectFrame" data-title="Module 4 - T8 Review Assignment">Module 4 - T8 Review Assignment</a></li>
+                <li><a href="\html_Files\html8\Case\ws_jfk.html" target="projectFrame" data-title="Module 4 - T8 Case Problem 1: Rhetoric in the United States">Module 4 - T8 Case Problem 1: Rhetoric in the United States</a></li>
+                <!--<li><a href="placeholder.html" target="projectFrame">Case Project 7</a></li>
+        <li><a href="placeholder.html" target="projectFrame">E-Commerce Project</a></li>-->
+            </ul>
+        </nav>
 
-    <main>
-        <div class="iframe-wrapper">
-            <div class="iframe-controls">
-                <span class="iframe-title" id="currentTitle">Welcome to my Project Showcase</span>
-                <div class="iframe-actions">
-                    <button class="open-new-tab-btn" id="openNewTabBtn" onclick="openCurrentPageInNewTab()" title="Open current page in new tab">
-                        Open in New Tab
-                    </button>
+        <main>
+            <div class="iframe-wrapper">
+                <div class="iframe-controls">
+                    <span class="iframe-title" id="currentTitle">Welcome to my Project Showcase</span>
+                    <div class="iframe-actions">
+                        <button class="open-new-tab-btn" id="openNewTabBtn" onclick="openCurrentPageInNewTab()" title="Open current page in new tab">
+                            ↗ Open in New Tab
+                        </button>
+                    </div>
+                </div>
+                <div class="iframe-container">
+                    <iframe name="projectFrame" id="projectFrame" src="welcome.html" title="Project Display Frame" aria-label="Project showcase content display area"></iframe>
                 </div>
             </div>
-            <div class="iframe-container">
-                <iframe name="projectFrame" id="projectFrame" src="welcome.html" title="Project Display Frame" aria-label="Project showcase content display area"></iframe>
-            </div>
-        </div>
-    </main>
+        </main>
+    </div>
 
     <footer>
         <p>&copy; 2025 - My Showcase - Tim Adkison COP2822C</p>
-        <p>This website is for a Web Technologies class, and no products or services are available for purchase</p>
+        <p>This website is for a Web Technologies class, and no products or services available for purchase</p>
     </footer>
 
     <script>

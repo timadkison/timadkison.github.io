@@ -15,7 +15,14 @@ form {
    display: flex;
    flex-flow: row wrap;
 } 
-
+.fieldset-container {
+      display: flex;
+      gap: 15px;
+    }
+    .toppings-container {
+      display: flex;
+      gap: 15px;
+    }
 fieldset {
    background-color: rgb(234, 189, 142);
    flex: 1 1 300px; 

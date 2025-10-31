@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract Sculptures - The Local Artisan Studio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <h1 class="logo">
+                    <a href="index.html" aria-label="The Local Artisan Studio - Home">The Local Artisan Studio</a>
+                </h1>
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="index.html" role="menuitem" class="nav-link">Home</a></li>
+                    <li role="none"><a href="framed-art.html" role="menuitem" class="nav-link">Framed Art</a></li>
+                    <li role="none"><a href="abstract-sculptures.html" role="menuitem" class="nav-link active" aria-current="page">Abstract Sculptures</a></li>
+                    <li role="none"><a href="wood-crafts.html" role="menuitem" class="nav-link">Wood Crafts</a></li>
+                    <li role="none"><a href="artists.html" role="menuitem" class="nav-link" aria-current="page">Artists</a></li>
+                    <li role="none">
+                        <a href="cart.html" role="menuitem" class="nav-link cart-link" aria-label="Shopping cart">
+                            Cart <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section class="category-section">
+            <div class="container">
+                <header class="category-header">
+                    <h1>Abstract Sculptures</h1>
+                    <p class="category-description">Explore our collection of contemporary abstract sculptures. Each piece is a unique interpretation of form, space, and artistic vision.</p>
+                </header>
+                
+                <div class="category-grid" role="region" aria-label="Abstract sculpture products">
+                    <!-- Products will be loaded by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>123 Art Street<br>
+                    Creative District, CD 12345<br>
+                    Phone: (555) 123-4567<br>
+                    Email: info@localartisanstudio.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="framed-art.html">Framed Art</a></li>
+                        <li><a href="abstract-sculptures.html">Abstract Sculptures</a></li>
+                        <li><a href="wood-crafts.html">Wood Crafts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>Stay connected for new arrivals and artist spotlights</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Local Artisan Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            loadCategoryProducts('abstract-sculptures', 'Abstract Sculptures');
+        });
+    </script>
+</body>
+</html>

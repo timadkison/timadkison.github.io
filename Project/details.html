@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - The Local Artisan Studio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <h1 class="logo">
+                    <a href="index.html" aria-label="The Local Artisan Studio - Home">The Local Artisan Studio</a>
+                </h1>
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="index.html" role="menuitem" class="nav-link">Home</a></li>
+                    <li role="none"><a href="framed-art.html" role="menuitem" class="nav-link">Framed Art</a></li>
+                    <li role="none"><a href="abstract-sculptures.html" role="menuitem" class="nav-link">Abstract Sculptures</a></li>
+                    <li role="none"><a href="wood-crafts.html" role="menuitem" class="nav-link">Wood Crafts</a></li>
+                    <li role="none">
+                        <a href="cart.html" role="menuitem" class="nav-link cart-link" aria-label="Shopping cart">
+                            Cart <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section class="product-detail-section">
+            <div class="container">
+                <nav aria-label="Breadcrumb">
+                    <a href="index.html" class="breadcrumb-link">Home</a> &raquo; 
+                    <span class="breadcrumb-current">Product Details</span>
+                </nav>
+                
+                <div class="product-detail">
+                    <div class="product-detail-image">
+                        <img id="product-image" 
+                             src="images/placeholder.jpg" 
+                             alt="Product image" 
+                             loading="lazy">
+                        <div class="image-placeholder" aria-hidden="true">[Product Image Placeholder]</div>
+                    </div>
+                    
+                    <div class="product-detail-info">
+                        <h1 id="product-name">Product Name</h1>
+                        <p id="product-artist" class="product-artist">by Artist Name</p>
+                        
+                        <div class="product-description-section">
+                            <h2>Description</h2>
+                            <p id="product-description" class="product-description">
+                                Product description will be loaded here.
+                            </p>
+                        </div>
+                        
+                        <div class="product-purchase">
+                            <p id="product-price" class="product-detail-price" aria-label="Product price">$0.00</p>
+                            
+                            <button id="add-to-cart" 
+                                    class="add-to-cart-btn" 
+                                    aria-describedby="product-name">
+                                Add to Cart
+                            </button>
+                        </div>
+                        
+                        <div class="product-features">
+                            <h3>Features</h3>
+                            <ul>
+                                <li>Handcrafted with attention to detail</li>
+                                <li>Made by local artisans</li>
+                                <li>Unique and one-of-a-kind piece</li>
+                                <li>Ready to display or use</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="shipping-info">
+                            <h3>Shipping Information</h3>
+                            <p>Free shipping on orders over $100. Standard shipping takes 3-5 business days. Carefully packaged to ensure safe delivery.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="related-products">
+                    <h2>You Might Also Like</h2>
+                    <p>Explore more beautiful pieces from our collection.</p>
+                    <div class="related-links">
+                        <a href="framed-art.html" class="related-link">Browse Framed Art</a>
+                        <a href="abstract-sculptures.html" class="related-link">View Sculptures</a>
+                        <a href="wood-crafts.html" class="related-link">See Wood Crafts</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>123 Art Street<br>
+                    Creative District, CD 12345<br>
+                    Phone: (555) 123-4567<br>
+                    Email: info@localartisanstudio.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="framed-art.html">Framed Art</a></li>
+                        <li><a href="abstract-sculptures.html">Abstract Sculptures</a></li>
+                        <li><a href="wood-crafts.html">Wood Crafts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>Stay connected for new arrivals and artist spotlights</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Local Artisan Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Profile - The Local Artisan Studio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/artist.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <h1 class="logo">
+                    <a href="index.html" aria-label="The Local Artisan Studio - Home">The Local Artisan Studio</a>
+                </h1>
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="index.html" role="menuitem" class="nav-link">Home</a></li>
+                    <li role="none"><a href="framed-art.html" role="menuitem" class="nav-link">Framed Art</a></li>
+                    <li role="none"><a href="abstract-sculptures.html" role="menuitem" class="nav-link">Abstract Sculptures</a></li>
+                    <li role="none"><a href="wood-crafts.html" role="menuitem" class="nav-link">Wood Crafts</a></li>
+                    <li role="none"><a href="artists.html" role="menuitem" class="nav-link active" aria-current="page">Artists</a></li>
+                    <li role="none">
+                        <a href="cart.html" role="menuitem" class="nav-link cart-link" aria-label="Shopping cart">
+                            Cart <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section class="artist-profile-section">
+            <div class="container">
+                <nav aria-label="Breadcrumb">
+                    <a href="index.html" class="breadcrumb-link">Home</a> &raquo; 
+                    <span class="breadcrumb-current">Artist Profile</span>
+                </nav>
+                
+                <div class="artist-profile">
+                    <div class="artist-main-info">
+                        <div class="artist-image-container">
+                            <img id="artist-image" 
+                                 src="images/artists/placeholder.jpg" 
+                                 alt="Artist portrait" 
+                                 loading="lazy">
+                            <div class="image-placeholder" aria-hidden="true">[Artist Portrait Placeholder]</div>
+                        </div>
+                        
+                        <div class="artist-info">
+                            <h1 id="artist-name">Artist Name</h1>
+                            <p id="artist-specialty" class="artist-specialty">Specialty</p>
+                            <p id="artist-location" class="artist-location">?? Location</p>
+                            
+                            <div class="artist-bio-section">
+                                <h2>About the Artist</h2>
+                                <p id="artist-bio" class="artist-bio">
+                                    Artist biography will be loaded here.
+                                </p>
+                            </div>
+                            
+                            <div class="artist-statement-section">
+                                <h3>Artist Statement</h3>
+                                <blockquote id="artist-statement" class="artist-statement">
+                                    "Artist statement will be loaded here."
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="artist-details">
+                        <div class="artist-background">
+                            <div class="education-section">
+                                <h3>Education & Training</h3>
+                                <p id="artist-education">Education details will be loaded here.</p>
+                            </div>
+                            
+                            <div id="exhibitions-section" class="exhibitions-section">
+                                <h3>Recent Exhibitions</h3>
+                                <ul id="artist-exhibitions">
+                                    <!-- Exhibitions will be loaded by JavaScript -->
+                                </ul>
+                            </div>
+                            
+                            <div id="awards-section" class="awards-section">
+                                <h3>Awards & Recognition</h3>
+                                <ul id="artist-awards">
+                                    <!-- Awards will be loaded by JavaScript -->
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="artist-contact">
+                            <h3>Connect with the Artist</h3>
+                            
+                            <div id="website-section" class="contact-item">
+                                <strong>Website:</strong>
+                                <a id="artist-website" href="#" target="_blank" rel="noopener">Artist Website</a>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <strong>Social Media:</strong>
+                                <div id="artist-social" class="social-links">
+                                    <!-- Social media links will be loaded by JavaScript -->
+                                </div>
+                            </div>
+                            
+                            <div class="contact-note">
+                                <p><small>Interested in commissioning a piece or learning more about the artist's work? Visit their website or social media for contact information.</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artist-works-section">
+                    <h2>Available Works</h2>
+                    <p>Explore the beautiful pieces currently available from this artist.</p>
+                    <div id="artist-works-grid" class="artist-works-grid">
+                        <!-- Artist's works will be loaded by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="back-to-browse">
+                    <h3>Explore More</h3>
+                    <div class="browse-links">
+                        <a href="framed-art.html" class="browse-link">Browse Framed Art</a>
+                        <a href="abstract-sculptures.html" class="browse-link">View Sculptures</a>
+                        <a href="wood-crafts.html" class="browse-link">See Wood Crafts</a>
+                        <a href="index.html" class="browse-link">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>123 Art Street<br>
+                    Creative District, CD 12345<br>
+                    Phone: (555) 123-4567<br>
+                    Email: info@localartisanstudio.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="framed-art.html">Framed Art</a></li>
+                        <li><a href="abstract-sculptures.html">Abstract Sculptures</a></li>
+                        <li><a href="wood-crafts.html">Wood Crafts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>Stay connected for new arrivals and artist spotlights</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Local Artisan Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

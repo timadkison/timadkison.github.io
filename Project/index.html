@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Local Artisan Studio - Handcrafted Art & Crafts</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <h1 class="logo">
+                    <a href="index.html" aria-label="The Local Artisan Studio - Home">The Local Artisan Studio</a>
+                </h1>
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="index.html" role="menuitem" class="nav-link active" aria-current="page">Home</a></li>
+                    <li role="none"><a href="framed-art.html" role="menuitem" class="nav-link">Framed Art</a></li>
+                    <li role="none"><a href="abstract-sculptures.html" role="menuitem" class="nav-link">Abstract Sculptures</a></li>
+                    <li role="none"><a href="wood-crafts.html" role="menuitem" class="nav-link">Wood Crafts</a></li>
+                    <li role="none"><a href="artists.html" role="menuitem" class="nav-link" aria-current="page">Artists</a></li>
+                    <li role="none">
+                        <a href="cart.html" role="menuitem" class="nav-link cart-link" aria-label="Shopping cart">
+                            Cart <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <h2 id="hero-heading">Discover Unique Handcrafted Art</h2>
+                <p class="hero-description">From stunning framed artwork to intricate sculptures and beautiful wood crafts, find the perfect piece to enhance your space.</p>
+                <a href="#featured" class="cta-button" aria-describedby="hero-description">Explore Our Collection</a>
+            </div>
+        </section>
+
+        <!-- Featured Section -->
+        <section id="featured" class="featured-section" aria-labelledby="featured-heading">
+            <div class="container">
+                <h2 id="featured-heading">Featured Artworks</h2>
+                <div class="featured-grid" role="region" aria-label="Featured artworks">
+                    
+                    <!-- Framed Art Feature -->
+                    <article class="featured-item" aria-labelledby="coastal-sunrise-title">
+                        <div class="featured-image">
+                            <img src="images/coastal-sunrise.jpg" 
+                                 alt="Coastal Sunrise - A beautiful seascape painting featuring warm orange and pink hues of sunrise over ocean waves"
+                                 loading="lazy">
+                            <div class="image-placeholder" aria-hidden="true">[Image Placeholder: Coastal Sunrise]</div>
+                        </div>
+                        <div class="featured-content">
+                            <h3 id="coastal-sunrise-title">Coastal Sunrise</h3>
+                            <p class="artist-name">by Jane Doe</p>
+                            <p class="item-description">A breathtaking seascape capturing the golden hour magic of dawn breaking over peaceful waters.</p>
+                            <p class="price" aria-label="Price: $250">$250.00</p>
+                            <a href="details.html?item=coastal-sunrise" class="view-details-btn" 
+                               aria-describedby="coastal-sunrise-title">View Details</a>
+                        </div>
+                    </article>
+
+                    <!-- Abstract Sculpture Feature -->
+                    <article class="featured-item" aria-labelledby="geometric-flow-title">
+                        <div class="featured-image">
+                            <img src="images/geometric-flow.jpg" 
+                                 alt="Geometric Flow - A modern abstract sculpture with flowing geometric shapes in brushed metal"
+                                 loading="lazy">
+                            <div class="image-placeholder" aria-hidden="true">[Image Placeholder: Geometric Flow]</div>
+                        </div>
+                        <div class="featured-content">
+                            <h3 id="geometric-flow-title">Geometric Flow</h3>
+                            <p class="artist-name">by Mark Smith</p>
+                            <p class="item-description">A striking contemporary sculpture that plays with light and shadow through its dynamic geometric forms.</p>
+                            <p class="price" aria-label="Price: $480">$480.00</p>
+                            <a href="details.html?item=geometric-flow" class="view-details-btn" 
+                               aria-describedby="geometric-flow-title">View Details</a>
+                        </div>
+                    </article>
+
+                    <!-- Wood Craft Feature -->
+                    <article class="featured-item" aria-labelledby="oak-serving-board-title">
+                        <div class="featured-image">
+                            <img src="images/oak-serving-board.jpg" 
+                                 alt="Oak Serving Board - A handcrafted wooden serving board with natural grain patterns"
+                                 loading="lazy">
+                            <div class="image-placeholder" aria-hidden="true">[Image Placeholder: Oak Serving Board]</div>
+                        </div>
+                        <div class="featured-content">
+                            <h3 id="oak-serving-board-title">Oak Serving Board</h3>
+                            <p class="artist-name">by Tim's Woodshop</p>
+                            <p class="item-description">Beautifully crafted from sustainable oak, perfect for entertaining and everyday use.</p>
+                            <p class="price" aria-label="Price: $85">$85.00</p>
+                            <a href="details.html?item=oak-serving-board" class="view-details-btn" 
+                               aria-describedby="oak-serving-board-title">View Details</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" aria-labelledby="about-heading">
+            <div class="container">
+                <h2 id="about-heading">About Our Studio</h2>
+                <div class="about-content">
+                    <p>The Local Artisan Studio showcases the finest handcrafted artwork from talented local artists and craftspeople. Each piece in our collection is carefully selected for its quality, uniqueness, and artistic merit.</p>
+                    <p>We believe in supporting local talent while bringing beautiful, one-of-a-kind pieces to art lovers and collectors. From stunning paintings to intricate sculptures and functional wood crafts, every item tells a story.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>123 Art Street<br>
+                    Creative District, CD 12345<br>
+                    Phone: (555) 123-4567<br>
+                    Email: info@localartisanstudio.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="framed-art.html">Framed Art</a></li>
+                        <li><a href="abstract-sculptures.html">Abstract Sculptures</a></li>
+                        <li><a href="wood-crafts.html">Wood Crafts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>Stay connected for new arrivals and artist spotlights</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Local Artisan Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

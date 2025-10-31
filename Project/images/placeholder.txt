@@ -1,0 +1,2 @@
+<!-- This file helps create the images directory structure -->
+<!-- Placeholder images would be stored here in a real implementation -->

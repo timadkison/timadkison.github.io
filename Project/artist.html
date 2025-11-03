@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,6 @@
     <title>Artist Profile - The Local Artisan Studio</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/artist.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header role="banner">
@@ -25,6 +24,7 @@
                     <li role="none"><a href="framed-art.html" role="menuitem" class="nav-link">Framed Art</a></li>
                     <li role="none"><a href="abstract-sculptures.html" role="menuitem" class="nav-link">Abstract Sculptures</a></li>
                     <li role="none"><a href="wood-crafts.html" role="menuitem" class="nav-link">Wood Crafts</a></li>
+                    <li role="none"><a href="all-products.html" role="menuitem" class="nav-link">All Products</a></li>
                     <li role="none"><a href="artists.html" role="menuitem" class="nav-link active" aria-current="page">Artists</a></li>
                     <li role="none">
                         <a href="cart.html" role="menuitem" class="nav-link cart-link" aria-label="Shopping cart">
@@ -41,6 +41,7 @@
             <div class="container">
                 <nav aria-label="Breadcrumb">
                     <a href="index.html" class="breadcrumb-link">Home</a> &raquo; 
+                    <a href="artists.html" class="breadcrumb-link">Artists</a> &raquo; 
                     <span class="breadcrumb-current">Artist Profile</span>
                 </nav>
                 
@@ -57,7 +58,7 @@
                         <div class="artist-info">
                             <h1 id="artist-name">Artist Name</h1>
                             <p id="artist-specialty" class="artist-specialty">Specialty</p>
-                            <p id="artist-location" class="artist-location">?? Location</p>
+                            <p id="artist-location" class="artist-location">📍 Location</p>
                             
                             <div class="artist-bio-section">
                                 <h2>About the Artist</h2>
@@ -130,6 +131,7 @@
                 <div class="back-to-browse">
                     <h3>Explore More</h3>
                     <div class="browse-links">
+                        <a href="artists.html" class="browse-link">All Artists</a>
                         <a href="framed-art.html" class="browse-link">Browse Framed Art</a>
                         <a href="abstract-sculptures.html" class="browse-link">View Sculptures</a>
                         <a href="wood-crafts.html" class="browse-link">See Wood Crafts</a>
@@ -156,6 +158,7 @@
                         <li><a href="framed-art.html">Framed Art</a></li>
                         <li><a href="abstract-sculptures.html">Abstract Sculptures</a></li>
                         <li><a href="wood-crafts.html">Wood Crafts</a></li>
+                        <li><a href="all-products.html">All Products</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -169,6 +172,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main-vanilla.js"></script>
 </body>
 </html>

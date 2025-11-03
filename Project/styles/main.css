@@ -592,3 +592,7 @@ footer {
         padding: 1rem 15px;
     }
 }
+.category-header {
+    padding-left:6px;
+  position:relative;
+}

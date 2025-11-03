@@ -20,18 +20,20 @@ Project/
 ??? framed-art.html              # Framed art category page
 ??? abstract-sculptures.html     # Abstract sculptures category page  
 ??? wood-crafts.html             # Wood crafts category page
+??? all-products.html            # All products in one scrollable page (NEW)
 ??? details.html                 # Product detail page (dynamic)
 ??? cart.html                    # Shopping cart page
-??? artists.html                 # Artists listing page (NEW)
-??? artist.html                  # Individual artist profile page (NEW)
+??? artists.html                 # Artists listing page
+??? artist.html                  # Individual artist profile page
 ??? styles/
 ?   ??? main.css                 # Main CSS styles
-?   ??? artist.css               # Artist-specific styles (NEW)
+?   ??? artist.css               # Artist-specific styles
+?   ??? all-products.css         # All products page styles (NEW)
 ??? js/
 ?   ??? main.js                  # JavaScript functionality & cart management
 ??? images/
     ??? placeholder.txt          # Placeholder for product images
-    ??? artists/                 # Artist portrait photos (NEW)
+    ??? artists/                 # Artist portrait photos
 ```
 
 ## ?? Features
@@ -86,6 +88,17 @@ Each category displays **6+ products** in a responsive grid:
 - **Order summary** with shipping options
 - **Checkout button** (demo only - shows alert)
 - **Empty cart state** with continue shopping link
+
+### All Products Page (NEW)
+- **Comprehensive view** of all artwork in a single scrollable page
+- **Category sections** organized by type (Framed Art, Sculptures, Wood Crafts)
+- **Filtering system** to view all categories or filter by specific type
+- **Sorting options** by name, price (low/high), or artist
+- **View modes** - switch between grid and list views
+- **Product statistics** showing totals and price ranges
+- **Quick category navigation** with links to individual category pages
+- **Back to top button** for easy navigation
+- **Responsive design** that works on all devices
 
 ## ??? Technology Stack
 

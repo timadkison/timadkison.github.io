@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Framed Art Collection - The Local Artisan Studio</title>
     <link rel="stylesheet" href="styles/main.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header role="banner">
@@ -24,7 +23,8 @@
                     <li role="none"><a href="framed-art.html" role="menuitem" class="nav-link active" aria-current="page">Framed Art</a></li>
                     <li role="none"><a href="abstract-sculptures.html" role="menuitem" class="nav-link">Abstract Sculptures</a></li>
                     <li role="none"><a href="wood-crafts.html" role="menuitem" class="nav-link">Wood Crafts</a></li>
-                    <li role="none"><a href="artists.html" role="menuitem" class="nav-link" aria-current="page">Artists</a></li>
+                    <li role="none"><a href="all-products.html" role="menuitem" class="nav-link">All Products</a></li>
+                    <li role="none"><a href="artists.html" role="menuitem" class="nav-link">Artists</a></li>
                     <li role="none">
                         <a href="cart.html" role="menuitem" class="nav-link cart-link" aria-label="Shopping cart">
                             Cart <span class="cart-count" id="cart-count" aria-live="polite">0</span>
@@ -66,6 +66,7 @@
                         <li><a href="framed-art.html">Framed Art</a></li>
                         <li><a href="abstract-sculptures.html">Abstract Sculptures</a></li>
                         <li><a href="wood-crafts.html">Wood Crafts</a></li>
+                        <li><a href="all-products.html">All Products</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -81,7 +82,7 @@
 
     <script src="js/main.js"></script>
     <script>
-        $(document).ready(function() {
+        document.addEventListener('DOMContentLoaded', function() {
             loadCategoryProducts('framed-art', 'Framed Art Collection');
         });
     </script>

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - The Local Artisan Studio</title>
     <link rel="stylesheet" href="styles/main.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header role="banner">
@@ -24,7 +23,8 @@
                     <li role="none"><a href="framed-art.html" role="menuitem" class="nav-link">Framed Art</a></li>
                     <li role="none"><a href="abstract-sculptures.html" role="menuitem" class="nav-link">Abstract Sculptures</a></li>
                     <li role="none"><a href="wood-crafts.html" role="menuitem" class="nav-link">Wood Crafts</a></li>
-                    <li role="none"><a href="artists.html" role="menuitem" class="nav-link active" aria-current="page">Artists</a></li>
+                    <li role="none"><a href="all-products.html" role="menuitem" class="nav-link">All Products</a></li>
+                    <li role="none"><a href="artists.html" role="menuitem" class="nav-link">Artists</a></li>
                     <li role="none">
                         <a href="cart.html" role="menuitem" class="nav-link cart-link active" aria-current="page" aria-label="Shopping cart">
                             Cart <span class="cart-count" id="cart-count" aria-live="polite">0</span>
@@ -53,50 +53,13 @@
                     
                     <div class="cart-summary">
                         <div class="cart-total-section">
-                            <h2>Order Summary</h2>
-                            <div class="total-line">
-                                <span>Subtotal:</span>
-                                <span id="cart-total" class="cart-total">$0.00</span>
+                            <div class="total-display">
+                                <span class="total-label">Total:</span>
+                                <span class="total-amount" id="cart-total" aria-live="polite">$0.00</span>
                             </div>
-                            <div class="total-line">
-                                <span>Shipping:</span>
-                                <span class="shipping-cost">Free</span>
-                            </div>
-                            <div class="total-line final-total">
-                                <span><strong>Total:</strong></span>
-                                <span id="final-total" class="final-total-amount"><strong>$0.00</strong></span>
-                            </div>
-                        </div>
-                        
-                        <div class="checkout-section">
-                            <button class="checkout-btn" onclick="proceedToCheckout()" aria-describedby="cart-total">
+                            <button class="checkout-btn" aria-label="Proceed to checkout">
                                 Proceed to Checkout
                             </button>
-                            <p class="checkout-note">
-                                <small>Note: This is a demo site. No actual payment processing is available.</small>
-                            </p>
-                        </div>
-                        
-                        <div class="continue-shopping">
-                            <a href="index.html" class="continue-shopping-btn">Continue Shopping</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="shipping-info-section">
-                    <h2>Shipping Information</h2>
-                    <div class="shipping-details">
-                        <div class="shipping-option">
-                            <h3>Free Standard Shipping</h3>
-                            <p>On orders over $100 • 3-5 business days</p>
-                        </div>
-                        <div class="shipping-option">
-                            <h3>Express Shipping</h3>
-                            <p>$15.00 • 1-2 business days</p>
-                        </div>
-                        <div class="shipping-option">
-                            <h3>Local Pickup</h3>
-                            <p>Free • Available at our studio</p>
                         </div>
                     </div>
                 </div>
@@ -120,6 +83,7 @@
                         <li><a href="framed-art.html">Framed Art</a></li>
                         <li><a href="abstract-sculptures.html">Abstract Sculptures</a></li>
                         <li><a href="wood-crafts.html">Wood Crafts</a></li>
+                        <li><a href="all-products.html">All Products</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -134,33 +98,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        function proceedToCheckout() {
-            if (cart.length === 0) {
-                alert('Your cart is empty. Please add some items before proceeding to checkout.');
-                return;
-            }
-            
-            alert('Thank you for your interest! This is a demo site, so no actual checkout is available. In a real implementation, this would redirect to a secure payment processing page.');
-        }
-        
-        // Update final total when cart changes
-        $(document).ready(function() {
-            // Initial load
-            updateFinalTotal();
-            
-            // Update total whenever cart items are displayed
-            const originalDisplayCartItems = window.displayCartItems;
-            window.displayCartItems = function() {
-                originalDisplayCartItems();
-                updateFinalTotal();
-            };
-        });
-        
-        function updateFinalTotal() {
-            const cartTotalText = $('#cart-total').text();
-            $('#final-total').html(`<strong>${cartTotalText}</strong>`);
-        }
-    </script>
 </body>
 </html>

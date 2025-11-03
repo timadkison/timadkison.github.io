@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Local Artisan Studio - Handcrafted Art & Crafts</title>
     <link rel="stylesheet" href="styles/main.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header role="banner">
@@ -24,7 +23,8 @@
                     <li role="none"><a href="framed-art.html" role="menuitem" class="nav-link">Framed Art</a></li>
                     <li role="none"><a href="abstract-sculptures.html" role="menuitem" class="nav-link">Abstract Sculptures</a></li>
                     <li role="none"><a href="wood-crafts.html" role="menuitem" class="nav-link">Wood Crafts</a></li>
-                    <li role="none"><a href="artists.html" role="menuitem" class="nav-link" aria-current="page">Artists</a></li>
+                    <li role="none"><a href="all-products.html" role="menuitem" class="nav-link">All Products</a></li>
+                    <li role="none"><a href="artists.html" role="menuitem" class="nav-link">Artists</a></li>
                     <li role="none">
                         <a href="cart.html" role="menuitem" class="nav-link cart-link" aria-label="Shopping cart">
                             Cart <span class="cart-count" id="cart-count" aria-live="polite">0</span>
@@ -54,9 +54,9 @@
                     <!-- Framed Art Feature -->
                     <article class="featured-item" aria-labelledby="coastal-sunrise-title">
                         <div class="featured-image">
-                            <img src="images/coastal-sunrise.jpg" 
+                            <img src="images/coastal-sunrise.png" 
                                  alt="Coastal Sunrise - A beautiful seascape painting featuring warm orange and pink hues of sunrise over ocean waves"
-                                 loading="lazy">
+                                 loading="lazy"  onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
                             <div class="image-placeholder" aria-hidden="true">[Image Placeholder: Coastal Sunrise]</div>
                         </div>
                         <div class="featured-content">
@@ -72,9 +72,9 @@
                     <!-- Abstract Sculpture Feature -->
                     <article class="featured-item" aria-labelledby="geometric-flow-title">
                         <div class="featured-image">
-                            <img src="images/geometric-flow.jpg" 
+                            <img src="images/geometric-flow.png" 
                                  alt="Geometric Flow - A modern abstract sculpture with flowing geometric shapes in brushed metal"
-                                 loading="lazy">
+                                 loading="lazy"  onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
                             <div class="image-placeholder" aria-hidden="true">[Image Placeholder: Geometric Flow]</div>
                         </div>
                         <div class="featured-content">
@@ -90,9 +90,9 @@
                     <!-- Wood Craft Feature -->
                     <article class="featured-item" aria-labelledby="oak-serving-board-title">
                         <div class="featured-image">
-                            <img src="images/oak-serving-board.jpg" 
+                            <img src="images/oak-serving-board.png" 
                                  alt="Oak Serving Board - A handcrafted wooden serving board with natural grain patterns"
-                                 loading="lazy">
+                                 loading="lazy"  onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
                             <div class="image-placeholder" aria-hidden="true">[Image Placeholder: Oak Serving Board]</div>
                         </div>
                         <div class="featured-content">
@@ -137,6 +137,7 @@
                         <li><a href="framed-art.html">Framed Art</a></li>
                         <li><a href="abstract-sculptures.html">Abstract Sculptures</a></li>
                         <li><a href="wood-crafts.html">Wood Crafts</a></li>
+                        <li><a href="all-products.html">All Products</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

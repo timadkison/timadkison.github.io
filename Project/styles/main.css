@@ -18,6 +18,22 @@ body {
     padding: 0 20px;
 }
 
+/* Image Optimization for High-Resolution Images */
+img {
+    max-width: 100%;
+    height: auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* High-DPI Display Optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: optimize-contrast;
+    }
+}
+
 /* Accessibility */
 .sr-only {
     position: absolute;
@@ -167,7 +183,7 @@ header {
 
 .cta-button {
     display: inline-block;
-    background: #27ae60;
+    background: #1d8548;
     color: white;
     padding: 1rem 2rem;
     text-decoration: none;
@@ -237,11 +253,14 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     background: #ecf0f1;
-    color: #7f8c8d;
+    color: #6c7777;
     padding: 1rem;
     border-radius: 5px;
     font-style: italic;
     text-align: center;
+    font-size: 0.9rem;
+    width: 80%;
+    opacity: 0.9;
 }
 
 .featured-content {
@@ -255,7 +274,7 @@ header {
 }
 
 .artist-name {
-    color: #7f8c8d;
+    color: #6c7777;
     font-style: italic;
     margin-bottom: 1rem;
 }
@@ -269,7 +288,7 @@ header {
 .price {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #27ae60;
+    color: #25a55b;
     margin-bottom: 1rem;
 }
 
@@ -392,7 +411,7 @@ header {
 }
 
 .product-artist {
-    color: #7f8c8d;
+    color: #6c7777;
     font-style: italic;
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
@@ -480,7 +499,7 @@ header {
 .empty-cart {
     text-align: center;
     padding: 3rem;
-    color: #7f8c8d;
+    color: #6c7777;
 }
 
 /* Footer */
@@ -592,7 +611,8 @@ footer {
         padding: 1rem 15px;
     }
 }
-.category-header {
+.category-header, .artists-header {
     padding-left:6px;
   position:relative;
+  box-shadow:unset;
 }

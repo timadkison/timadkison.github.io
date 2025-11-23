@@ -6,6 +6,9 @@
     <title>Our Artists - The Local Artisan Studio</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/artist.css">
+    <link rel="stylesheet" href="styles/artist-buttons.css">
+    <link rel="stylesheet" href="styles/focus-styles.css">
+
 </head>
 <body>
     <header role="banner">
@@ -48,11 +51,23 @@
                     
                     <!-- Jane Doe -->
                     <article class="artist-card" aria-labelledby="jane-doe-name">
-                        <div class="artist-card-image">
-                            <img src="images/artists/jane-doe.jpg" 
-                                 alt="Portrait of Jane Doe, landscape painter"
-                                 loading="lazy">
-                            <div class="image-placeholder" aria-hidden="true">[Artist Photo: Jane Doe]</div>
+                        <div class="artist-card-media">
+                            <div class="artist-card-image">
+                                <img src="images/artists/jane_doe.png" 
+                                     alt="Portrait of Jane Doe, landscape painter"
+                                     loading="lazy" onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
+                                <div class="image-placeholder"  aria-hidden="true">[Artist Photo: Jane Doe]</div>
+                            </div>
+                            <div class="artist-card-video">
+                                <video controls preload="metadata" aria-describedby="jane-doe-video-caption">
+                                    <source src="images/artists/videos/jane-doe-painting.mp4" type="video/mp4">
+                                    <track kind="captions" src="images/artists/videos/captions/jane-doe-captions.vtt" srclang="en" label="English" default>
+                                    <p>Your browser doesn't support video. <a href="images/artists/videos/jane-doe-painting.mp4">Download the video</a> instead.</p>
+                                </video>
+                                <p id="jane-doe-video-caption" class="video-caption">
+                                    Watch Jane creating her signature coastal sunrise painting using her plein air technique.
+                                </p>
+                            </div>
                         </div>
                         <div class="artist-card-content">
                             <h3 id="jane-doe-name">Jane Doe</h3>
@@ -69,11 +84,23 @@
 
                     <!-- Mark Smith -->
                     <article class="artist-card" aria-labelledby="mark-smith-name">
-                        <div class="artist-card-image">
-                            <img src="images/artists/mark-smith.jpg" 
-                                 alt="Portrait of Mark Smith, contemporary sculptor"
-                                 loading="lazy">
-                            <div class="image-placeholder" aria-hidden="true">[Artist Photo: Mark Smith]</div>
+                        <div class="artist-card-media">
+                            <div class="artist-card-image">
+                                <img src="images/artists/mark_smith.png" 
+                                     alt="Portrait of Mark Smith, contemporary sculptor"
+                                     loading="lazy" onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
+                                <div class="image-placeholder" aria-hidden="true">[Artist Photo: Mark Smith]</div>
+                            </div>
+                            <div class="artist-card-video">
+                                <video controls preload="metadata" aria-describedby="mark-smith-video-caption">
+                                    <source src="images/artists/videos/mark-smith-sculpting.mp4" type="video/mp4">
+                                    <track kind="captions" src="images/artists/videos/captions/mark-smith-captions.vtt" srclang="en" label="English" default>
+                                    <p>Your browser doesn't support video. <a href="images/artists/videos/mark-smith-sculpting.mp4">Download the video</a> instead.</p>
+                                </video>
+                                <p id="mark-smith-video-caption" class="video-caption">
+                                    See Mark shaping brushed aluminum into his latest geometric sculpture in his San Francisco studio.
+                                </p>
+                            </div>
                         </div>
                         <div class="artist-card-content">
                             <h3 id="mark-smith-name">Mark Smith</h3>
@@ -90,11 +117,23 @@
 
                     <!-- Tim's Woodshop -->
                     <article class="artist-card" aria-labelledby="tims-woodshop-name">
-                        <div class="artist-card-image">
-                            <img src="images/artists/tims-woodshop.jpg" 
-                                 alt="Tim Anderson in his woodworking shop"
-                                 loading="lazy">
-                            <div class="image-placeholder" aria-hidden="true">[Artist Photo: Tim's Woodshop]</div>
+                        <div class="artist-card-media">
+                            <div class="artist-card-image">
+                                <img src="images/artists/tim_anderson.png" 
+                                     alt="Tim Anderson in his woodworking shop"
+                                     loading="lazy" onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
+                                <div class="image-placeholder" aria-hidden="true">[Artist Photo: Tim's Woodshop]</div>
+                            </div>
+                            <div class="artist-card-video">
+                                <video controls preload="metadata" aria-describedby="tims-woodshop-video-caption">
+                                    <source src="images/artists/videos/tims-woodshop-crafting.mp4" type="video/mp4">
+                                    <track kind="captions" src="images/artists/videos/captions/tims-woodshop-captions.vtt" srclang="en" label="English" default>
+                                    <p>Your browser doesn't support video. <a href="images/artists/videos/tims-woodshop-crafting.mp4">Download the video</a> instead.</p>
+                                </video>
+                                <p id="tims-woodshop-video-caption" class="video-caption">
+                                    Watch Tim hand-crafting an oak serving board using traditional woodworking techniques.
+                                </p>
+                            </div>
                         </div>
                         <div class="artist-card-content">
                             <h3 id="tims-woodshop-name">Tim's Woodshop</h3>
@@ -111,11 +150,23 @@
 
                     <!-- Sarah Johnson -->
                     <article class="artist-card" aria-labelledby="sarah-johnson-name">
-                        <div class="artist-card-image">
-                            <img src="images/artists/sarah-johnson.jpg" 
-                                 alt="Portrait of Sarah Johnson, mountain landscape painter"
-                                 loading="lazy">
-                            <div class="image-placeholder" aria-hidden="true">[Artist Photo: Sarah Johnson]</div>
+                        <div class="artist-card-media">
+                            <div class="artist-card-image">
+                                <img src="images/artists/sarah_johnson.png" 
+                                     alt="Portrait of Sarah Johnson, mountain landscape painter"
+                                     loading="lazy" onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
+                                <div class="image-placeholder" aria-hidden="true">[Artist Photo: Sarah Johnson]</div>
+                            </div>
+                            <div class="artist-card-video">
+                                <video controls preload="metadata" aria-describedby="sarah-johnson-video-caption">
+                                    <source src="images/artists/videos/sarah-johnson-mountains.mp4" type="video/mp4">
+                                    <track kind="captions" src="images/artists/videos/captions/sarah-johnson-captions.vtt" srclang="en" label="English" default>
+                                    <p>Your browser doesn't support video. <a href="images/artists/videos/sarah-johnson-mountains.mp4">Download the video</a> instead.</p>
+                                </video>
+                                <p id="sarah-johnson-video-caption" class="video-caption">
+                                    Follow Sarah as she hikes to her favorite mountain vista to paint the Sierra Nevada at sunrise.
+                                </p>
+                            </div>
                         </div>
                         <div class="artist-card-content">
                             <h3 id="sarah-johnson-name">Sarah Johnson</h3>
@@ -132,11 +183,23 @@
 
                     <!-- Alex Chen -->
                     <article class="artist-card" aria-labelledby="alex-chen-name">
-                        <div class="artist-card-image">
-                            <img src="images/artists/alex-chen.jpg" 
-                                 alt="Portrait of Alex Chen, urban artist"
-                                 loading="lazy">
-                            <div class="image-placeholder" aria-hidden="true">[Artist Photo: Alex Chen]</div>
+                        <div class="artist-card-media">
+                            <div class="artist-card-image">
+                                <img src="images/artists/alex_chen.png" 
+                                     alt="Portrait of Alex Chen, urban artist"
+                                     loading="lazy" onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
+                                <div class="image-placeholder" aria-hidden="true">[Artist Photo: Alex Chen]</div>
+                            </div>
+                            <div class="artist-card-video">
+                                <video controls preload="metadata" aria-describedby="alex-chen-video-caption">
+                                    <source src="images/artists/videos/alex-chen-cityscape.mp4" type="video/mp4">
+                                    <track kind="captions" src="images/artists/videos/captions/alex-chen-captions.vtt" srclang="en" label="English" default>
+                                    <p>Your browser doesn't support video. <a href="images/artists/videos/alex-chen-cityscape.mp4">Download the video</a> instead.</p>
+                                </video>
+                                <p id="alex-chen-video-caption" class="video-caption">
+                                    Experience Alex capturing the dynamic shadows and light of San Francisco's financial district.
+                                </p>
+                            </div>
                         </div>
                         <div class="artist-card-content">
                             <h3 id="alex-chen-name">Alex Chen</h3>
@@ -153,11 +216,23 @@
 
                     <!-- Emily Brown -->
                     <article class="artist-card" aria-labelledby="emily-brown-name">
-                        <div class="artist-card-image">
-                            <img src="images/artists/emily-brown.jpg" 
-                                 alt="Portrait of Emily Brown, forest painter"
-                                 loading="lazy">
-                            <div class="image-placeholder" aria-hidden="true">[Artist Photo: Emily Brown]</div>
+                        <div class="artist-card-media">
+                            <div class="artist-card-image">
+                                <img src="images/artists/emily_brown.png" 
+                                     alt="Portrait of Emily Brown, forest painter"
+                                     loading="lazy" onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
+                                <div class="image-placeholder" aria-hidden="true">[Artist Photo: Emily Brown]</div>
+                            </div>
+                            <div class="artist-card-video">
+                                <video controls preload="metadata" aria-describedby="emily-brown-video-caption">
+                                    <source src="images/artists/videos/emily-brown-forest.mp4" type="video/mp4">
+                                    <track kind="captions" src="images/artists/videos/captions/emily-brown-captions.vtt" srclang="en" label="English" default>
+                                    <p>Your browser doesn't support video. <a href="images/artists/videos/emily-brown-forest.mp4">Download the video</a> instead.</p>
+                                </video>
+                                <p id="emily-brown-video-caption" class="video-caption">
+                                    Join Emily painting among the ancient redwoods of Muir Woods, capturing filtered sunlight through the canopy.
+                                </p>
+                            </div>
                         </div>
                         <div class="artist-card-content">
                             <h3 id="emily-brown-name">Emily Brown</h3>

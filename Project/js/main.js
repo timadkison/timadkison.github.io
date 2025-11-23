@@ -13,7 +13,10 @@ const artists = {
         exhibitions: ['Coastal Gallery Annual Show 2023', 'Pacific Art Festival 2022', 'Bay Area Landscapes Exhibition 2021'],
         awards: ['Best Seascape Award - Coastal Gallery 2023', 'Emerging Artist Prize - Pacific Art Festival 2022'],
         statement: 'I believe that art has the power to heal and inspire. Through my paintings, I aim to share the tranquility and wonder I find in nature\'s most beautiful moments.',
-        image: 'images/artists/jane-doe.jpg',
+        image: 'images/artists/jane_doe.png',
+        image: 'images/artists/jane_doe.png',
+        video: 'images/artists/videos/jane-doe-painting.mp4',
+        videoCaption: 'Watch Jane creating her signature coastal sunrise painting using her plein air technique.',
         website: 'www.janedoeart.com',
         social: {
             instagram: '@janedoeart',
@@ -30,7 +33,9 @@ const artists = {
         exhibitions: ['Modern Forms Gallery 2023', 'Bay Area Sculptors Collective 2022', 'Contemporary Art Museum Group Show 2021'],
         awards: ['Innovation in Sculpture Award 2023', 'Best Contemporary Piece - Modern Forms Gallery 2022'],
         statement: 'My work explores the tension between order and chaos, structure and freedom. I use geometric forms to create a visual dialogue about balance in our modern world.',
-        image: 'images/artists/mark-smith.jpg',
+        image: 'images/artists/mark_smith.png',
+        video: 'images/artists/videos/mark-smith-sculpting.mp4',
+        videoCaption: 'See Mark shaping brushed aluminum into his latest geometric sculpture in his San Francisco studio.',
         website: 'www.marksmithsculpture.com',
         social: {
             instagram: '@marksmithsculptor',
@@ -47,7 +52,9 @@ const artists = {
         exhibitions: ['Artisan Craft Fair 2023', 'Sustainable Living Expo 2022', 'Local Makers Market (Monthly)'],
         awards: ['Craftsperson of the Year 2023', 'Sustainability Award - Green Living Magazine 2022'],
         statement: 'We believe in creating pieces that will last for generations. Every piece of wood tells a story, and we aim to honor that story through our craftsmanship.',
-        image: 'images/artists/tims-woodshop.jpg',
+        image: 'images/artists/tim_anderson.png',
+        video: 'images/artists/videos/tims-woodshop-crafting.mp4',
+        videoCaption: 'Watch Tim hand-crafting an oak serving board using traditional woodworking techniques.',
         website: 'www.timswoodshop.com',
         social: {
             instagram: '@timswoodshop',
@@ -64,7 +71,9 @@ const artists = {
         exhibitions: ['Mountain Art Festival 2023', 'Wilderness Gallery Solo Show 2022', 'Nature Conservancy Art Auction 2021'],
         awards: ['Best Mountain Landscape 2023', 'Environmental Art Award 2022'],
         statement: 'The mountains have been my greatest teacher. Through my art, I hope to inspire others to protect these magnificent wild places.',
-        image: 'images/artists/sarah-johnson.jpg',
+        image: 'images/artists/sarah_johnson.png',
+        video: 'images/artists/videos/sarah-johnson-mountains.mp4',
+        videoCaption: 'Follow Sarah as she hikes to her favorite mountain vista to paint the Sierra Nevada at sunrise.',
         website: 'www.sarahjohnsonart.com',
         social: {
             instagram: '@sarahjohnsonpaints'
@@ -80,7 +89,9 @@ const artists = {
         exhibitions: ['Urban Visions Gallery 2023', 'City Art Collective 2022', 'Architecture & Art Symposium 2021'],
         awards: ['Urban Artist of the Year 2023'],
         statement: 'Cities are living, breathing entities. My paintings explore the relationship between human creativity and the urban environment we\'ve built.',
-        image: 'images/artists/alex-chen.jpg',
+        image: 'images/artists/alex_chen.png',
+        video: 'images/artists/videos/alex-chen-cityscape.mp4',
+        videoCaption: 'Experience Alex capturing the dynamic shadows and light of San Francisco\'s financial district.',
         website: 'www.alexchenart.com',
         social: {
             instagram: '@alexchen_artist',
@@ -97,7 +108,9 @@ const artists = {
         exhibitions: ['Forest Art Festival 2023', 'Nature Lovers Gallery 2022'],
         awards: ['Best Nature Scene 2023'],
         statement: 'Forests hold ancient wisdom. I paint to share the peace and wonder I find walking among the trees.',
-        image: 'images/artists/emily-brown.jpg',
+        image: 'images/artists/emily_brown.png',
+        video: 'images/artists/videos/emily-brown-forest.mp4',
+        videoCaption: 'Join Emily painting among the ancient redwoods of Muir Woods, capturing filtered sunlight through the canopy.',
         social: {
             instagram: '@emilybrownforestpainter'
         }

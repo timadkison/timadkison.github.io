@@ -51,7 +51,7 @@
                             <img id="artist-image" 
                                  src="images/artists/placeholder.jpg" 
                                  alt="Artist portrait" 
-                                 loading="lazy">
+                                 loading="lazy"  onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
                             <div class="image-placeholder" aria-hidden="true">[Artist Portrait Placeholder]</div>
                         </div>
                         
@@ -172,6 +172,6 @@
         </div>
     </footer>
 
-    <script src="js/main-vanilla.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

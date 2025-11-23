@@ -1,0 +1,116 @@
+/* Enhanced Focus Styles for Better Accessibility */
+
+/* Base focus styles for all focusable elements */
+*:focus {
+    outline: 3px solid #e74c3c !important;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 5px rgba(231, 76, 60, 0.3) !important;
+}
+
+/* Enhanced focus for specific interactive elements */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+video:focus {
+    outline: 3px solid #e74c3c !important;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 5px rgba(231, 76, 60, 0.3) !important;
+}
+
+/* Navigation and button focus styles */
+.nav-link:focus,
+.view-details-btn:focus,
+.nav-toggle:focus,
+.cta-button:focus,
+.add-to-cart-btn:focus,
+.remove-btn:focus,
+.cart-link:focus,
+.category-cta-btn:focus,
+.browse-link:focus,
+.view-work-btn:focus,
+.artist-link:focus,
+.view-artist-btn:focus,
+.view-works-btn:focus {
+    outline: 3px solid #e74c3c !important;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 5px rgba(231, 76, 60, 0.3) !important;
+}
+
+/* Product card focus styles */
+.product-card:focus,
+.artist-card:focus,
+.featured-item:focus {
+    outline: 3px solid #e74c3c !important;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px rgba(231, 76, 60, 0.3) !important;
+}
+
+/* Form elements focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid #e74c3c !important;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px rgba(231, 76, 60, 0.3) !important;
+    border-color: #e74c3c !important;
+}
+
+/* Skip link focus (if you add one) */
+.skip-link:focus {
+    outline: 3px solid #e74c3c !important;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px rgba(231, 76, 60, 0.3) !important;
+    top: 6px;
+}
+
+/* Video controls focus */
+video::-webkit-media-controls-play-button:focus,
+video::-webkit-media-controls-mute-button:focus,
+video::-webkit-media-controls-volume-slider:focus,
+video::-webkit-media-controls-timeline:focus {
+    outline: 3px solid #e74c3c !important;
+    outline-offset: 2px;
+}
+
+/* Focus visible for modern browsers */
+*:focus-visible {
+    outline: 3px solid #e74c3c !important;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 5px rgba(231, 76, 60, 0.3) !important;
+}
+
+/* Remove focus from mouse users on buttons and links */
+.no-focus-outline *:focus:not(:focus-visible) {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    *:focus {
+        outline: 4px solid #e74c3c !important;
+        outline-offset: 4px;
+        box-shadow: 0 0 0 6px rgba(231, 76, 60, 0.5) !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *:focus {
+        transition: none !important;
+    }
+}
+
+/* Dark mode considerations */
+@media (prefers-color-scheme: dark) {
+    *:focus {
+        outline-color: #ff6b6b !important;
+        box-shadow: 0 0 0 5px rgba(255, 107, 107, 0.3) !important;
+    }
+}

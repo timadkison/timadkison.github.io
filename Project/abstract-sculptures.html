@@ -43,7 +43,7 @@
                     <h1>Abstract Sculptures</h1>
                     <p class="category-description">Explore our collection of contemporary abstract sculptures. Each piece is a unique interpretation of form, space, and artistic vision.</p>
                 </header>
-                
+
                 <div class="category-grid" role="region" aria-label="Abstract sculpture products">
                     <!-- Products will be loaded by JavaScript -->
                 </div>
@@ -56,10 +56,12 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Contact Us</h3>
-                    <p>123 Art Street<br>
-                    Creative District, CD 12345<br>
-                    Phone: (555) 123-4567<br>
-                    Email: info@localartisanstudio.com</p>
+                    <p>
+                        123 Art Street<br>
+                        Creative District, CD 12345<br>
+                        Phone: (555) 123-4567<br>
+                        Email: info@localartisanstudio.com
+                    </p>
                 </div>
                 <div class="footer-section">
                     <h3>Categories</h3>
@@ -80,10 +82,38 @@
             </div>
         </div>
     </footer>
+    <!-- Disclaimer Footer - Hidden when in iframe -->
+    <footer class="disclaimer-footer" aria-label="Footer for  Web Technologies Class requirements">
+        <p>&copy; 2025 - My Showcase - Tim Adkison COP2822C</p>
+        <p>This website is for a Web Technologies class, and no products or services are available for purchase</p>
+    </footer>
 
+
+
+    <script>
+        // Check if page is loaded in an iframe and hide footer accordingly
+        (function () {
+            function isInIframe() {
+                try {
+                    return window.self !== window.top;
+                } catch (e) {
+                    return true;
+                }
+            }
+
+            if (isInIframe()) {
+                // Page is in iframe - add class to hide footer
+                document.body.classList.add('in-iframe');
+            }
+        })();
+
+
+
+
+    </script>
     <script src="js/main.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             loadCategoryProducts('abstract-sculptures', 'Abstract Sculptures');
         });
     </script>

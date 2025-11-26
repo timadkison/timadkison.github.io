@@ -43,7 +43,7 @@
                     <h1>All Products</h1>
                     <p class="category-description">Browse our complete collection of handcrafted artwork, sculptures, and wood crafts. Each piece is unique and created by talented local artists.</p>
                 </header>-->
-                
+
                 <div class="category-grid" id="all-products-grid">
                     <!-- Products will be loaded by JavaScript -->
                 </div>
@@ -56,10 +56,12 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Contact Us</h3>
-                    <p>123 Art Street<br>
-                    Creative District, CD 12345<br>
-                    Phone: (555) 123-4567<br>
-                    Email: info@localartisanstudio.com</p>
+                    <p>
+                        123 Art Street<br>
+                        Creative District, CD 12345<br>
+                        Phone: (555) 123-4567<br>
+                        Email: info@localartisanstudio.com
+                    </p>
                 </div>
                 <div class="footer-section">
                     <h3>Categories</h3>
@@ -80,55 +82,83 @@
             </div>
         </div>
     </footer>
+    <!-- Disclaimer Footer - Hidden when in iframe -->
+    <footer class="disclaimer-footer" aria-label="Footer for  Web Technologies Class requirements">
+        <p>&copy; 2025 - My Showcase - Tim Adkison COP2822C</p>
+        <p>This website is for a Web Technologies class, and no products or services are available for purchase</p>
+    </footer>
 
+
+
+    <script>
+        // Check if page is loaded in an iframe and hide footer accordingly
+        (function () {
+            function isInIframe() {
+                try {
+                    return window.self !== window.top;
+                } catch (e) {
+                    return true;
+                }
+            }
+
+            if (isInIframe()) {
+                // Page is in iframe - add class to hide footer
+                document.body.classList.add('in-iframe');
+            }
+        })();
+
+
+
+
+    </script>
     <script src="js/main.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             loadAllProducts();
         });
 
         function loadAllProducts() {
             const allProducts = Object.values(products);
             const grid = document.getElementById('all-products-grid');
-            
+
             if (!grid) return;
-            
+
             // Add loading state
             grid.innerHTML = '<div class="loading-state" aria-live="polite">Loading products...</div>';
             grid.setAttribute('aria-busy', 'true');
-            
+
             // Simulate async loading (remove this setTimeout in real implementation)
             setTimeout(() => {
                 grid.innerHTML = '';
                 grid.removeAttribute('aria-busy');
-                
+
                 allProducts.forEach(product => {
-                    const artistDisplay = product.artistId && artists[product.artistId] 
+                    const artistDisplay = product.artistId && artists[product.artistId]
                         ? `<a href="artist.html?id=${product.artistId}" class="artist-link">by ${product.artist}</a>`
                         : `by ${product.artist}`;
-                    
+
                     const productCard = document.createElement('div');
                     productCard.className = 'product-card';
                     productCard.innerHTML = `
-                        <div class="product-image">
-                            <img src="${product.image}" alt="${product.name} by ${product.artist}" loading="lazy" onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
-                            <div class="image-placeholder" aria-hidden="true" style="display: flex;">[Image Placeholder: ${product.name}]</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">${product.name}</h3>
-                            <p class="artist-name">${artistDisplay}</p>
-                            <p class="product-price" aria-label="Price: $${product.price}">$${product.price.toFixed(2)}</p>
-                            <a href="details.html?item=${product.id}" class="view-details-btn" aria-describedby="product-${product.id}-name">View Details</a>
-                        </div>
-                    `;
-                    
+                            <div class="product-image">
+                                <img src="${product.image}" alt="${product.name} by ${product.artist}" loading="lazy" onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
+                                <div class="image-placeholder" aria-hidden="true" style="display: flex;">[Image Placeholder: ${product.name}]</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">${product.name}</h3>
+                                <p class="artist-name">${artistDisplay}</p>
+                                <p class="product-price" aria-label="Price: $${product.price}">$${product.price.toFixed(2)}</p>
+                                <a href="details.html?item=${product.id}" class="view-details-btn" aria-describedby="product-${product.id}-name">View Details</a>
+                            </div>
+                        `;
+
                     // Add unique ID for better screen reader support
                     const nameElement = productCard.querySelector('.product-name');
                     nameElement.id = `product-${product.id}-name`;
-                    
+
                     grid.appendChild(productCard);
                 });
-                
+
                 // Announce completion to screen readers
                 const announcement = document.createElement('div');
                 announcement.setAttribute('aria-live', 'polite');

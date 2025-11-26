@@ -6,6 +6,7 @@
     <title>The Local Artisan Studio - Handcrafted Art & Crafts</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/focus-styles.css">
+    <script src="js/main.js"></script>
 </head>
 <body>
     <header role="banner">
@@ -51,13 +52,13 @@
             <div class="container">
                 <h2 id="featured-heading">Featured Artworks</h2>
                 <div class="featured-grid" role="region" aria-label="Featured artworks">
-                    
+
                     <!-- Framed Art Feature -->
                     <article class="featured-item" aria-labelledby="coastal-sunrise-title">
                         <div class="featured-image">
-                            <img src="images/coastal-sunrise.png" 
+                            <img src="images/coastal-sunrise.png"
                                  alt="Coastal Sunrise - A beautiful seascape painting featuring warm orange and pink hues of sunrise over ocean waves"
-                                 loading="lazy"  onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
+                                 loading="lazy" onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
                             <div class="image-placeholder" aria-hidden="true">[Image Placeholder: Coastal Sunrise]</div>
                         </div>
                         <div class="featured-content">
@@ -65,7 +66,7 @@
                             <p class="artist-name">by Jane Doe</p>
                             <p class="item-description">A breathtaking seascape capturing the golden hour magic of dawn breaking over peaceful waters.</p>
                             <p class="price" aria-label="Price: $250">$250.00</p>
-                            <a href="details.html?item=coastal-sunrise" class="view-details-btn" 
+                            <a href="details.html?item=coastal-sunrise" class="view-details-btn"
                                aria-describedby="coastal-sunrise-title">View Details</a>
                         </div>
                     </article>
@@ -73,9 +74,9 @@
                     <!-- Abstract Sculpture Feature -->
                     <article class="featured-item" aria-labelledby="geometric-flow-title">
                         <div class="featured-image">
-                            <img src="images/geometric-flow.png" 
+                            <img src="images/geometric-flow.png"
                                  alt="Geometric Flow - A modern abstract sculpture with flowing geometric shapes in brushed metal"
-                                 loading="lazy"  onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
+                                 loading="lazy" onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
                             <div class="image-placeholder" aria-hidden="true">[Image Placeholder: Geometric Flow]</div>
                         </div>
                         <div class="featured-content">
@@ -83,7 +84,7 @@
                             <p class="artist-name">by Mark Smith</p>
                             <p class="item-description">A striking contemporary sculpture that plays with light and shadow through its dynamic geometric forms.</p>
                             <p class="price" aria-label="Price: $480">$480.00</p>
-                            <a href="details.html?item=geometric-flow" class="view-details-btn" 
+                            <a href="details.html?item=geometric-flow" class="view-details-btn"
                                aria-describedby="geometric-flow-title">View Details</a>
                         </div>
                     </article>
@@ -91,9 +92,9 @@
                     <!-- Wood Craft Feature -->
                     <article class="featured-item" aria-labelledby="oak-serving-board-title">
                         <div class="featured-image">
-                            <img src="images/oak-serving-board.png" 
+                            <img src="images/oak-serving-board.png"
                                  alt="Oak Serving Board - A handcrafted wooden serving board with natural grain patterns"
-                                 loading="lazy"  onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
+                                 loading="lazy" onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
                             <div class="image-placeholder" aria-hidden="true">[Image Placeholder: Oak Serving Board]</div>
                         </div>
                         <div class="featured-content">
@@ -101,7 +102,7 @@
                             <p class="artist-name">by Tim's Woodshop</p>
                             <p class="item-description">Beautifully crafted from sustainable oak, perfect for entertaining and everyday use.</p>
                             <p class="price" aria-label="Price: $85">$85.00</p>
-                            <a href="details.html?item=oak-serving-board" class="view-details-btn" 
+                            <a href="details.html?item=oak-serving-board" class="view-details-btn"
                                aria-describedby="oak-serving-board-title">View Details</a>
                         </div>
                     </article>
@@ -127,10 +128,12 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Contact Us</h3>
-                    <p>123 Art Street<br>
-                    Creative District, CD 12345<br>
-                    Phone: (555) 123-4567<br>
-                    Email: info@localartisanstudio.com</p>
+                    <p>
+                        123 Art Street<br>
+                        Creative District, CD 12345<br>
+                        Phone: (555) 123-4567<br>
+                        Email: info@localartisanstudio.com
+                    </p>
                 </div>
                 <div class="footer-section">
                     <h3>Categories</h3>
@@ -151,7 +154,34 @@
             </div>
         </div>
     </footer>
+    <!-- Disclaimer Footer - Hidden when in iframe -->
+    <footer class="disclaimer-footer" aria-label="Footer for  Web Technologies Class requirements">
+        <p>&copy; 2025 - My Showcase - Tim Adkison COP2822C</p>
+        <p>This website is for a Web Technologies class, and no products or services are available for purchase</p>
+    </footer>
 
-    <script src="js/main.js"></script>
+    
+
+    <script>
+    // Check if page is loaded in an iframe and hide footer accordingly
+        (function () {
+            function isInIframe() {
+                try {
+                    return window.self !== window.top;
+                } catch (e) {
+                    return true;
+                }
+            }
+
+            if (isInIframe()) {
+                // Page is in iframe - add class to hide footer
+                document.body.classList.add('in-iframe');
+            }
+        })();
+
+
+
+
+    </script>
 </body>
 </html>

@@ -40,33 +40,33 @@
         <section class="artist-profile-section">
             <div class="container">
                 <nav aria-label="Breadcrumb">
-                    <a href="index.html" class="breadcrumb-link">Home</a> &raquo; 
-                    <a href="artists.html" class="breadcrumb-link">Artists</a> &raquo; 
+                    <a href="index.html" class="breadcrumb-link">Home</a> &raquo;
+                    <a href="artists.html" class="breadcrumb-link">Artists</a> &raquo;
                     <span class="breadcrumb-current">Artist Profile</span>
                 </nav>
-                
+
                 <div class="artist-profile">
                     <div class="artist-main-info">
                         <div class="artist-image-container">
-                            <img id="artist-image" 
-                                 src="images/artists/placeholder.jpg" 
-                                 alt="Artist portrait" 
-                                 loading="lazy"  onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
+                            <img id="artist-image"
+                                 src="images/artists/placeholder.jpg"
+                                 alt="Artist portrait"
+                                 loading="lazy" onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
                             <div class="image-placeholder" aria-hidden="true">[Artist Portrait Placeholder]</div>
                         </div>
-                        
+
                         <div class="artist-info">
                             <h1 id="artist-name">Artist Name</h1>
                             <p id="artist-specialty" class="artist-specialty">Specialty</p>
                             <p id="artist-location" class="artist-location">📍 Location</p>
-                            
+
                             <div class="artist-bio-section">
                                 <h2>About the Artist</h2>
                                 <p id="artist-bio" class="artist-bio">
                                     Artist biography will be loaded here.
                                 </p>
                             </div>
-                            
+
                             <div class="artist-statement-section">
                                 <h3>Artist Statement</h3>
                                 <blockquote id="artist-statement" class="artist-statement">
@@ -75,21 +75,21 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="artist-details">
                         <div class="artist-background">
                             <div class="education-section">
                                 <h3>Education & Training</h3>
                                 <p id="artist-education">Education details will be loaded here.</p>
                             </div>
-                            
+
                             <div id="exhibitions-section" class="exhibitions-section">
                                 <h3>Recent Exhibitions</h3>
                                 <ul id="artist-exhibitions">
                                     <!-- Exhibitions will be loaded by JavaScript -->
                                 </ul>
                             </div>
-                            
+
                             <div id="awards-section" class="awards-section">
                                 <h3>Awards & Recognition</h3>
                                 <ul id="artist-awards">
@@ -97,29 +97,29 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <div class="artist-contact">
                             <h3>Connect with the Artist</h3>
-                            
+
                             <div id="website-section" class="contact-item">
                                 <strong>Website:</strong>
                                 <a id="artist-website" href="#" target="_blank" rel="noopener">Artist Website</a>
                             </div>
-                            
+
                             <div class="contact-item">
                                 <strong>Social Media:</strong>
                                 <div id="artist-social" class="social-links">
                                     <!-- Social media links will be loaded by JavaScript -->
                                 </div>
                             </div>
-                            
+
                             <div class="contact-note">
                                 <p><small>Interested in commissioning a piece or learning more about the artist's work? Visit their website or social media for contact information.</small></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="artist-works-section">
                     <h2>Available Works</h2>
                     <p>Explore the beautiful pieces currently available from this artist.</p>
@@ -127,7 +127,7 @@
                         <!-- Artist's works will be loaded by JavaScript -->
                     </div>
                 </div>
-                
+
                 <div class="back-to-browse">
                     <h3>Explore More</h3>
                     <div class="browse-links">
@@ -147,10 +147,12 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Contact Us</h3>
-                    <p>123 Art Street<br>
-                    Creative District, CD 12345<br>
-                    Phone: (555) 123-4567<br>
-                    Email: info@localartisanstudio.com</p>
+                    <p>
+                        123 Art Street<br>
+                        Creative District, CD 12345<br>
+                        Phone: (555) 123-4567<br>
+                        Email: info@localartisanstudio.com
+                    </p>
                 </div>
                 <div class="footer-section">
                     <h3>Categories</h3>
@@ -171,7 +173,35 @@
             </div>
         </div>
     </footer>
+    <!-- Disclaimer Footer - Hidden when in iframe -->
+    <footer class="disclaimer-footer" aria-label="Footer for  Web Technologies Class requirements">
+        <p>&copy; 2025 - My Showcase - Tim Adkison COP2822C</p>
+        <p>This website is for a Web Technologies class, and no products or services are available for purchase</p>
+    </footer>
 
+
+
+    <script>
+        // Check if page is loaded in an iframe and hide footer accordingly
+        (function () {
+            function isInIframe() {
+                try {
+                    return window.self !== window.top;
+                } catch (e) {
+                    return true;
+                }
+            }
+
+            if (isInIframe()) {
+                // Page is in iframe - add class to hide footer
+                document.body.classList.add('in-iframe');
+            }
+        })();
+
+
+
+
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>

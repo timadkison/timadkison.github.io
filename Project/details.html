@@ -40,40 +40,40 @@
         <section class="product-detail-section">
             <div class="container">
                 <nav aria-label="Breadcrumb">
-                    <a href="index.html" class="breadcrumb-link">Home</a> &raquo; 
+                    <a href="index.html" class="breadcrumb-link">Home</a> &raquo;
                     <span class="breadcrumb-current">Product Details</span>
                 </nav>
-                
+
                 <div class="product-detail">
                     <div class="product-detail-image">
-                        <img id="product-image" 
-                             src="images/placeholder.jpg" 
-                             alt="Product image" 
-                             loading="lazy"  onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
+                        <img id="product-image"
+                             src="images/placeholder.jpg"
+                             alt="Product image"
+                             loading="lazy" onload="hideImagePlaceholder(this)" onerror="showImagePlaceholder(this)">
                         <div class="image-placeholder" aria-hidden="true">[Image Placeholder: Product Image]</div>
                     </div>
-                    
+
                     <div class="product-detail-info">
                         <h1 id="product-name">Product Name</h1>
                         <p id="product-artist" class="product-artist">by Artist Name</p>
-                        
+
                         <div class="product-description-section">
                             <h2>Description</h2>
                             <p id="product-description" class="product-description">
                                 Product description will be loaded here.
                             </p>
                         </div>
-                        
+
                         <div class="product-purchase">
                             <p id="product-price" class="product-detail-price" aria-label="Product price">$0.00</p>
-                            
-                            <button id="add-to-cart" 
-                                    class="add-to-cart-btn" 
+
+                            <button id="add-to-cart"
+                                    class="add-to-cart-btn"
                                     aria-describedby="product-name">
                                 Add to Cart
                             </button>
                         </div>
-                        
+
                         <div class="product-features">
                             <h3>Features</h3>
                             <ul>
@@ -83,14 +83,14 @@
                                 <li>Ready to display or use</li>
                             </ul>
                         </div>
-                        
+
                         <div class="shipping-info">
                             <h3>Shipping Information</h3>
                             <p>Free shipping on orders over $100. Standard shipping takes 3-5 business days. Carefully packaged to ensure safe delivery.</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="related-products">
                     <h2>You Might Also Like</h2>
                     <p>Explore more beautiful pieces from our collection.</p>
@@ -109,10 +109,12 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Contact Us</h3>
-                    <p>123 Art Street<br>
-                    Creative District, CD 12345<br>
-                    Phone: (555) 123-4567<br>
-                    Email: info@localartisanstudio.com</p>
+                    <p>
+                        123 Art Street<br>
+                        Creative District, CD 12345<br>
+                        Phone: (555) 123-4567<br>
+                        Email: info@localartisanstudio.com
+                    </p>
                 </div>
                 <div class="footer-section">
                     <h3>Categories</h3>
@@ -133,7 +135,35 @@
             </div>
         </div>
     </footer>
+    <!-- Disclaimer Footer - Hidden when in iframe -->
+    <footer class="disclaimer-footer" aria-label="Footer for  Web Technologies Class requirements">
+        <p>&copy; 2025 - My Showcase - Tim Adkison COP2822C</p>
+        <p>This website is for a Web Technologies class, and no products or services are available for purchase</p>
+    </footer>
 
+
+
+    <script>
+        // Check if page is loaded in an iframe and hide footer accordingly
+        (function () {
+            function isInIframe() {
+                try {
+                    return window.self !== window.top;
+                } catch (e) {
+                    return true;
+                }
+            }
+
+            if (isInIframe()) {
+                // Page is in iframe - add class to hide footer
+                document.body.classList.add('in-iframe');
+            }
+        })();
+
+
+
+
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
